@@ -8,10 +8,13 @@ export default defineConfig({
     target: 'esnext',
     minify: false,
   },
-  plugins: [react(),  federation({
-    remotes: {
-      remote_registration: "http://localhost:3001/assets/remoteEntry.js",
-      remote_account: "http://localhost:3002/assets/remoteEntry.js",
+  server: {
+    port: 3002,
+  },
+  plugins: [react(), federation({
+    filename: "remoteEntry.js",
+    exposes: {
+      "./Account": "./src/pages/Account"
     },
     shared: ['react', '@chakra-ui/react']
   }),]

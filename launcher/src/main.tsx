@@ -3,25 +3,21 @@ import ReactDOM from 'react-dom/client'
 import App from './App'
 import './index.css'
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import Login from "./pages/Login";
 import Registration from "./pages/Registration";
+import Home from "./pages/Home";
 
 
 const root = ReactDOM.createRoot(
     document.getElementById("root")!
 );
 
-const onRegister = () => {
-
-}
-
 root.render(
     <BrowserRouter>
         <Routes>
             <Route path="/" element={<App/>}>
-                <Route index element={<Login/>}/>
+                <Route index element={<Home/>}/>
                 <Route path="registration" element={
-                    <Registration />
+                    <Registration/>
                 }/>
             </Route>
 

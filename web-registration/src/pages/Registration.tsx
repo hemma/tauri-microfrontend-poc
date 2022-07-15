@@ -4,7 +4,7 @@ import PasswordInput from "../components/PasswordInput";
 import {useEffect, useState} from "react";
 
 interface RegistrationProps {
-    onRegister: () => void | undefined
+    onRegister: (email: string, token: string) => void | undefined
 }
 
 function Registration(props: RegistrationProps) {
@@ -21,7 +21,7 @@ function Registration(props: RegistrationProps) {
     }, [email, password])
 
     const onRegister = () => {
-        props.onRegister()
+        props.onRegister(email!, "token_123")
     }
 
     return (
