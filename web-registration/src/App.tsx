@@ -1,13 +1,14 @@
 import './App.css'
-import {Center} from "@chakra-ui/react";
+import {ChakraProvider} from "@chakra-ui/react";
+import Registration from "./pages/Registration";
 
 function App() {
 
-  return (
-      <Center bg='tomato' h='100px' color='white'>
-        <h3>Registration</h3>
-      </Center>
-  )
+    return (
+        <ChakraProvider>
+            <Registration onRegister={() => {}}/>
+        </ChakraProvider>
+    )
 }
 
 export default App
