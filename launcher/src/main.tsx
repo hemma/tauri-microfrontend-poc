@@ -5,6 +5,7 @@ import './index.css'
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Registration from "./pages/Registration";
 import Home from "./pages/Home";
+import Logout from "./pages/Logout";
 
 
 const root = ReactDOM.createRoot(
@@ -18,6 +19,9 @@ root.render(
                 <Route index element={<Home/>}/>
                 <Route path="registration" element={
                     <Registration/>
+                }/>
+                <Route path="logout" element={
+                    <Logout/>
                 }/>
             </Route>
 

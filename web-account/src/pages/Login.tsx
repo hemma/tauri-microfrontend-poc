@@ -1,14 +1,13 @@
 import {Button, Center, Container, Heading, VStack} from "@chakra-ui/react";
+import {useEffect, useState} from "react";
 import EmailInput from "../components/EmailInput";
 import PasswordInput from "../components/PasswordInput";
-import {useEffect, useState} from "react";
 
-interface RegistrationProps {
-    onRegister: (email: string, token: string) => void | undefined
+interface LoginProps {
+    onLogin: (email: string, token: string) => void
 }
 
-function Registration(props: RegistrationProps) {
-
+function Login(props: LoginProps) {
     const [email, setEmail] = useState<string | undefined>(undefined)
     const [password, setPassword] = useState<string | undefined>(undefined)
 
@@ -20,14 +19,15 @@ function Registration(props: RegistrationProps) {
         }
     }, [email, password])
 
-    const onRegister = () => {
-        props.onRegister(email!, "token_123")
+    const onLogin = () => {
+        props.onLogin(email!, 'token-abc-123')
     }
 
     return (
-        <VStack bg={'lightsalmon'} pt={10}><Container maxW='md'>
+
+        <VStack bg={'lightblue'} pt={10}><Container maxW='md'>
             <Center>
-                <Heading>Registration</Heading>
+                <Heading>Login</Heading>
             </Center>
             </Container>
             <Container pt={5}>
@@ -39,12 +39,12 @@ function Registration(props: RegistrationProps) {
                 </Container>
                 <Container pt={5} maxW='md'>
                     <Center>
-                        <Button disabled={!valid} colorScheme='blue' onClick={onRegister}>Register</Button>
+                        <Button disabled={!valid} colorScheme='blue' onClick={onLogin}>Login</Button>
                     </Center>
                 </Container>
             </Container>
         </VStack>
-    )
+    );
 }
 
-export default Registration
+export default Login

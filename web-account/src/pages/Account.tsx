@@ -1,4 +1,4 @@
-import {Center, Heading} from "@chakra-ui/react";
+import {Center, Container, Heading} from "@chakra-ui/react";
 import {useEffect} from "react";
 
 interface AccountProps {
@@ -13,9 +13,11 @@ function Account(props: AccountProps) {
     }, [])
 
     return (
-        <Center>
-            <Heading>{props.email}</Heading>
-        </Center>
+        <Container bg={'lightblue'} pt={10}>
+            <Center>
+                <Heading>Welcome {props.email}</Heading>
+            </Center>
+        </Container>
     )
 }
 

@@ -14,7 +14,8 @@ export default defineConfig({
   plugins: [react(), federation({
     filename: "remoteEntry.js",
     exposes: {
-      "./Account": "./src/pages/Account"
+      "./Account": "./src/pages/Account",
+      "./Login": "./src/pages/Login"
     },
     shared: ['react', '@chakra-ui/react']
   }),]
